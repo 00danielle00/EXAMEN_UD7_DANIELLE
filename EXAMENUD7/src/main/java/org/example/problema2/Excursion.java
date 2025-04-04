@@ -82,9 +82,9 @@ public class Excursion {
         System.out.println("Inserta su edad:");
         int edad = sc.nextInt();
 
-        for (Estudiante e : listaAsistentes){
-            if (e.getNombre().equalsIgnoreCase(nombre) &&e.getCurso().equalsIgnoreCase(curso) && e.getEdad() == edad){
-                System.out.println("El estudiante ya existe en la lista de asiste a la actividad "+nombreActivdad);
+        for (Estudiante e : listaAsistentes) {
+            if (e.getNombre().equalsIgnoreCase(nombre) && e.getCurso().equalsIgnoreCase(curso) && e.getEdad() == edad) {
+                System.out.println("El estudiante ya existe en la lista de asiste a la actividad " + nombreActivdad);
             }
         }
 
@@ -100,7 +100,7 @@ public class Excursion {
     public void verAsistentes() {
 
         for (Estudiante es : listaAsistentes) {
-            System.out.println(es.getCurso()+" - "+es.getApellidos()+", "+es.getNombre()+" ("+es.getEdad()+")");
+            System.out.println(es.getCurso() + " - " + es.getApellidos() + ", " + es.getNombre() + " (" + es.getEdad() + ")");
         }
     }
 
@@ -116,8 +116,8 @@ public class Excursion {
     }
 
     public void eliminarAsistentesPorEdad(int edad) {
-        for (Estudiante e: listaAsistentes){
-            if (e.getEdad()<edad){
+        for (Estudiante e : listaAsistentes) {
+            if (e.getEdad() < edad) {
                 listaAsistentes.remove(e);
                 break;
             }
