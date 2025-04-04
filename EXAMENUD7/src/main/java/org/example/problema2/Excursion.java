@@ -117,10 +117,11 @@ public class Excursion {
 
     public void eliminarAsistentesPorEdad(int edad) {
         for (Estudiante e: listaAsistentes){
-            if (e.getEdad() < edad){
+            if (e.getEdad()<edad){
                 listaAsistentes.remove(e);
                 break;
             }
+
         }
     }
 }

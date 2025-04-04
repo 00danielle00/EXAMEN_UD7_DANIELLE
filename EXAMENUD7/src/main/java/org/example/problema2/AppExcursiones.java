@@ -9,7 +9,6 @@ public class AppExcursiones {
         terra_mitica.inscribirAsistente();
         terra_mitica.inscribirAsistente();
         terra_mitica.inscribirAsistente();
-        terra_mitica.inscribirAsistente();
 
         terra_mitica.verAsistentes();
 
