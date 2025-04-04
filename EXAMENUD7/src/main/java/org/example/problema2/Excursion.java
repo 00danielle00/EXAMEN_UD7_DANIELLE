@@ -1,9 +1,6 @@
 package org.example.problema2;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class Excursion {
     static Scanner sc = new Scanner(System.in);
@@ -70,24 +67,40 @@ public class Excursion {
 
     public void inscribirAsistente() {
         System.out.println("Creando estudiante...");
-        System.out.println("Inserta los apellidos");
+
+        System.out.println("Inserta los apellidos:");
+        sc.nextLine();
         String apellidos = sc.nextLine();
+
+
         System.out.println("Inserte el nombre:");
         String nombre = sc.next();
+
         System.out.println("Inserta el curso:");
         String curso = sc.next();
+
         System.out.println("Inserta su edad:");
-        int edad= sc.nextInt();
-        listaAsistentes.add(new Estudiante(apellidos,nombre,curso,edad));
+        int edad = sc.nextInt();
+
+        for (Estudiante e : listaAsistentes){
+            if (e.getNombre().equalsIgnoreCase(nombre) &&e.getCurso().equalsIgnoreCase(curso) && e.getEdad() == edad){
+                System.out.println("El estudiante ya existe en la lista de asiste a la actividad "+nombreActivdad);
+            }
+        }
+
+        listaAsistentes.add(new Estudiante(apellidos, nombre, curso, edad));
+        System.out.println("Añadido correctamente el estudiante " + nombre + " " + apellidos + " del curso " + curso);
     }
 
     public double calcularImporteIngreso() {
-        return 0;
+
+        return precio;
     }
 
     public void verAsistentes() {
+
         for (Estudiante es : listaAsistentes) {
-            System.out.println(es);
+            System.out.println(es.getCurso()+" - "+es.getApellidos()+", "+es.getNombre()+" ("+es.getEdad()+")");
         }
     }
 
@@ -100,6 +113,15 @@ public class Excursion {
                 ", listaAsistentes=" + listaAsistentes +
                 ", profesores=" + profesores +
                 '}';
+    }
+
+    public void eliminarAsistentesPorEdad(int edad) {
+        for (Estudiante e: listaAsistentes){
+            if (e.getEdad() < edad){
+                listaAsistentes.remove(e);
+                break;
+            }
+        }
     }
 }
 
